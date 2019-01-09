@@ -8,7 +8,7 @@
 //   - コメントとは: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Lexical_grammar#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88
 
 // ここに「関数スコープ」の説明を記述する
-//ifやforのブロック内に定義されている変数にも外からアクセスできるブロック
+//関数の処理内容を記述。{}で囲まれた部分の変数は外部からアクセスできない
 
 // 課題3: 以下の条件を満たす高階関数を実装してください
 //   - 関数名: kadai_3
@@ -28,29 +28,27 @@
 function kadai_3(age, callback) {
     let message;
     if(typeof age !== 'number') {
-        message = '数値が入力されていません'
+        message = '数値が入力されていません';
     } else if(age >= 20) {
-        message = '値は20以上です'
+        message = '値は20以上です';
     } else if(age >= 10) {
-        message = '値は10未満です'
-    } 
+        message = '値は10以上20未満です';
+    } else {
+        message = '値は10未満です';
+    }
     callback(message);
 }
-
-kadai_3(22, function(message) {
-    alert(message)
+kadai_3('変人', function(message) {
+    alert(message);
 });
-kadai_3(11, function(message) {
-    alert(message)
+kadai_3(50, function(message){
+    alert(message);
 });
-kadai_3(5, function(message) {
-    alert(message)
-}); 
-kadai_3('ともだ', function(message) {
-    alert(message)
+kadai_3(16, function(message) {
+    alert(message);
 });
-kadai_3(true, function(message) {
-    alert(message)
+kadai_3(7,function(message) {
+    alert(message);
 });
 // 課題4: 以下の条件を満たす即時関数を作る
 //   - 2つの引数を受け取る
@@ -58,7 +56,6 @@ kadai_3(true, function(message) {
 //     - 第2引数: y => 数値
 //   - 処理内容:
 //     - 第1引数のx, 第2引数のyを使って足し算した結果(「x + y」の結果)をconsole.logで出力する。
-
 ((x, y) => {
-    console.log('x + y =', x + y);
-})(4, 5);
+    console.log('x + y =', x + y)
+})(3,7);
