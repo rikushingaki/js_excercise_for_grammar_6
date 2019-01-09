@@ -8,7 +8,7 @@
 //   - コメントとは: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Lexical_grammar#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88
 
 // ここに「関数スコープ」の説明を記述する
-//関数の処理内容を記述。{}で囲まれた部分の変数は外部からアクセスできない
+//関数の処理内容を記述。関数内の引数や関数内で定義されている変数は関数外からアクセスできない。
 
 // 課題3: 以下の条件を満たす高階関数を実装してください
 //   - 関数名: kadai_3
@@ -47,7 +47,7 @@ kadai_3(50, function(message){
 kadai_3(16, function(message) {
     alert(message);
 });
-kadai_3(7,function(message) {
+kadai_3(7, function(message) {
     alert(message);
 });
 // 課題4: 以下の条件を満たす即時関数を作る
@@ -58,4 +58,4 @@ kadai_3(7,function(message) {
 //     - 第1引数のx, 第2引数のyを使って足し算した結果(「x + y」の結果)をconsole.logで出力する。
 ((x, y) => {
     console.log('x + y =', x + y)
-})(3,7);
+})(3, 7);
